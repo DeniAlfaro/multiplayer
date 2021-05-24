@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public float timerValue = 180;
+    public float timerValue = 90;
     public Text timerText;
+    public GameObject gameOverPanel;
 
     void Update()
     {
@@ -17,6 +18,11 @@ public class Timer : MonoBehaviour
         else
         {
             timerValue = 0;
+        }
+        if (timerValue == 0)
+        {
+            gameOverPanel.SetActive(true);
+            Time.timeScale = 0f;
         }
         DisplayTime(timerValue);
     }
