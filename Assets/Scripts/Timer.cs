@@ -8,6 +8,8 @@ public class Timer : MonoBehaviour
     public float timerValue = 90;
     public Text timerText;
     public GameObject gameOverPanel;
+    public Text scoreGO;
+    public static int theScore;
 
     void Update()
     {
@@ -21,8 +23,9 @@ public class Timer : MonoBehaviour
         }
         if (timerValue == 0)
         {
-            gameOverPanel.SetActive(true);
+            gameOverPanel.SetActive(true);            
             Time.timeScale = 0f;
+            scoreGO.GetComponent<Text>().text = "SCORE: " + theScore;
         }
         DisplayTime(timerValue);
     }
