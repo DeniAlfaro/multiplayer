@@ -5,16 +5,22 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    public Text txtScoreResultado;
     public float timerValue = 90;
     public Text timerText;
     public GameObject gameOverPanel;
     public Text scoreGO;
     public static int theScore;
+    //public AudioSource gameMusic;
+
+    [SerializeField]
+    public GameObject score;
 
     void Update()
     {
         if (timerValue > 0)
         {
+            //gameMusic.Play();
             timerValue -= Time.deltaTime;
         }
         else
@@ -25,7 +31,7 @@ public class Timer : MonoBehaviour
         {
             gameOverPanel.SetActive(true);            
             Time.timeScale = 0f;
-            scoreGO.GetComponent<Text>().text = "SCORE: " + theScore;
+            txtScoreResultado.text = score.GetComponent<Text>().text;
         }
         DisplayTime(timerValue);
     }
