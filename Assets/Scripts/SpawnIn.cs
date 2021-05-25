@@ -16,6 +16,8 @@ public class SpawnIn : NetworkBehaviour
     public void StartButtons() {
         if (GUILayout.Button("Client")) {
             NetworkManager.Singleton.StartClient();
+            //ulong? prefabHash = NetworkObject.GetPrefabHashFromGenerator("player2");
+            //callback(true, prefabHash, Quaternion.identity);
         }
         
         if (GUILayout.Button("Host")) {
