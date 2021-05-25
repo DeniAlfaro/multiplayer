@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using MLAPI;
 public class Timer : MonoBehaviour
 {
     public Text txtScoreResultado;
@@ -35,6 +35,7 @@ public class Timer : MonoBehaviour
         }
         DisplayTime(timerValue);
     }
+  
 
     void DisplayTime(float timerToDisplay) {
         if (timerToDisplay < 0)
